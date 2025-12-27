@@ -1,0 +1,143 @@
+@use 'sass:color';
+@use '../style/token.scss' as *;
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-sm;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  background-color: $color-bg;
+  color: $color-text-primary;
+  transition: $transition-base;
+  outline: none;
+
+  &:hover:not(:disabled) {
+    border-color: $color-primary;
+    color: $color-primary;
+
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+  }
+
+  // 尺寸变体
+  &--small {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-xs;
+  }
+
+  &--medium {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+  }
+
+  &--large {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-md;
+  }
+
+  // 类型变体
+  &--default {
+    background-color: $color-bg;
+    border-color: $color-border;
+    color: $color-text-primary;
+
+    &:hover:not(:disabled) {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: color.scale($color-primary, $lightness: -10%);
+      border-color: color.scale($color-primary, $lightness: -10%);
+    }
+  }
+
+  &--success {
+    background-color: $color-success;
+    border-color: $color-success;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: color.scale($color-success, $lightness: -10%);
+      border-color: color.scale($color-success, $lightness: -10%);
+    }
+  }
+
+  &--warning {
+    background-color: $color-warning;
+    border-color: $color-warning;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: color.scale($color-warning, $lightness: -10%);
+      border-color: color.scale($color-warning, $lightness: -10%);
+    }
+  }
+
+  &--error {
+    background-color: $color-error;
+    border-color: $color-error;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: color.scale($color-error, $lightness: -10%);
+      border-color: color.scale($color-error, $lightness: -10%);
+    }
+  }
+
+  // 状态变体
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &--loading {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &__loading-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    animation: spin 1s linear infinite; 
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

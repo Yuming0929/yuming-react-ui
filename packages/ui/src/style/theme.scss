@@ -1,0 +1,42 @@
+@use 'sass:color';
+@use './token.scss' as *;
+
+// 主题变量导出（供外部覆盖）
+:root {
+  --yuming-color-primary: #{$color-primary};
+  --yuming-color-success: #{$color-success};
+  --yuming-color-warning: #{$color-warning};
+  --yuming-color-error: #{$color-error};
+  --yuming-color-info: #{$color-info};
+  
+  --yuming-text-primary: #{$color-text-primary};
+  --yuming-text-secondary: #{$color-text-secondary};
+  --yuming-text-disabled: #{$color-text-disabled};
+  --yuming-border: #{$color-border};
+  --yuming-bg: #{$color-bg};
+  --yuming-bg-hover: #{$color-bg-hover};
+  
+  --yuming-spacing-xs: #{$spacing-xs};
+  --yuming-spacing-sm: #{$spacing-sm};
+  --yuming-spacing-md: #{$spacing-md};
+  --yuming-spacing-lg: #{$spacing-lg};
+  --yuming-spacing-xl: #{$spacing-xl};
+  
+  --yuming-font-size-xs: #{$font-size-xs};
+  --yuming-font-size-sm: #{$font-size-sm};
+  --yuming-font-size-md: #{$font-size-md};
+  --yuming-font-size-lg: #{$font-size-lg};
+  --yuming-font-size-xl: #{$font-size-xl};
+  
+  --yuming-border-radius-sm: #{$border-radius-sm};
+  --yuming-border-radius-md: #{$border-radius-md};
+  --yuming-border-radius-lg: #{$border-radius-lg};
+  --yuming-border-radius-round: #{$border-radius-round};
+  
+  --yuming-shadow-sm: #{$shadow-sm};
+  --yuming-shadow-md: #{$shadow-md};
+  --yuming-shadow-lg: #{$shadow-lg};
+  
+  --yuming-transition-base: #{$transition-base};
+}
+

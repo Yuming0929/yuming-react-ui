@@ -1,0 +1,240 @@
+@use '../style/token.scss' as *;
+@use 'sass:color';
+
+.input-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  background-color: $color-bg;
+  transition: $transition-base;
+
+  &:hover:not(.input-wrapper--disabled) {
+    border-color: $color-primary;
+  }
+
+  &.input-wrapper--focused {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+  }
+
+  &.input-wrapper--disabled {
+    background-color: $color-bg-hover;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.input-wrapper--with-addon {
+    border-radius: 0;
+  }
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: $color-text-primary;
+  font-size: $font-size-sm;
+  line-height: 1.5;
+  transition: $transition-base;
+
+  &::placeholder {
+    color: $color-text-disabled;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  // 尺寸变体
+  &--small {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-xs;
+    height: 24px;
+  }
+
+  &--medium {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    height: 32px;
+  }
+
+  &--large {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-md;
+    height: 40px;
+  }
+
+  // 状态变体
+  // &--default 默认状态已在 wrapper 中定义
+
+  &--success {
+    .input-wrapper & {
+      border-color: $color-success;
+    }
+    &.input--focused {
+      box-shadow: 0 0 0 2px rgba($color-success, 0.2);
+    }
+  }
+
+  &--warning {
+    .input-wrapper & {
+      border-color: $color-warning;
+    }
+    &.input--focused {
+      box-shadow: 0 0 0 2px rgba($color-warning, 0.2);
+    }
+  }
+
+  &--error {
+    .input-wrapper & {
+      border-color: $color-error;
+    }
+    &.input--focused {
+      box-shadow: 0 0 0 2px rgba($color-error, 0.2);
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    color: $color-text-disabled;
+  }
+
+  &--readonly {
+    background-color: $color-bg-hover;
+    cursor: default;
+  }
+
+  &--with-prefix {
+    padding-left: 0;
+  }
+
+  &--with-suffix {
+    padding-right: 0;
+  }
+}
+
+.inputPrefix {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 $spacing-sm;
+  color: $color-text-secondary;
+  flex-shrink: 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.inputSuffix {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: 0 $spacing-sm;
+  color: $color-text-secondary;
+  flex-shrink: 0;
+}
+
+.inputSuffixIcon {
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.inputClear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  color: $color-text-secondary;
+  transition: $transition-base;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+
+  &:hover {
+    color: $color-text-primary;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.inputPasswordToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: $color-text-secondary;
+  transition: $transition-base;
+  user-select: none;
+  flex-shrink: 0;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// 输入框组合（带前后缀标签）
+.inputGroup {
+  display: inline-flex;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.inputAddonBefore,
+.inputAddonAfter {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-sm;
+  line-height: 1.5;
+  color: $color-text-primary;
+  background-color: $color-bg-hover;
+  border: 1px solid $color-border;
+  white-space: nowrap;
+}
+
+.inputAddonBefore {
+  border-right: none;
+  border-radius: $border-radius-md 0 0 $border-radius-md;
+}
+
+.inputAddonAfter {
+  border-left: none;
+  border-radius: 0 $border-radius-md $border-radius-md 0;
+}
+
+.input-wrapper--with-addon {
+  border-radius: 0;
+}

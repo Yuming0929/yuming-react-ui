@@ -1,0 +1,102 @@
+.toast-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    align-items: center;
+
+    
+}
+
+.toast {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    min-width: 200px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    // 初始状态：透明且向上偏移
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    // 分离动画：位置变化和透明度/缩放使用不同的过渡时间
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+                
+    
+    max-height: 200px;
+
+    &--visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    // 退出状态：用于重排动画
+    &--exiting {
+        opacity: 0;
+        // transform: translateY(0px) scale(1);
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+
+        overflow: hidden;
+    }
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 8px;
+        flex-shrink: 0;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+    }
+
+    &__loadingIcon {
+        animation: spin 1s linear infinite;
+    }
+
+    &__content {
+        flex: 1;
+    }
+
+    &--success {
+        color: #52c41a;
+    }
+
+    &--error {
+        color: #f5222d;
+    }
+
+    &--warning {
+        color: #faad14;
+    }
+
+    &--info {
+        color: #1890ff;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
