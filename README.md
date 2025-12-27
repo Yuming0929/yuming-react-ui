@@ -2,6 +2,24 @@
 
 一个现代化的 React UI 组件库，采用标准工程化实践构建。
 
+
+## 待完成组件
+
+- [x] Button
+- [x] Input
+- [x] Toast
+- [ ] Modal
+- [ ] Accordion
+- [ ] Popover
+- [ ] Tooltip
+- [ ] Form
+- [ ] Slider
+- [ ] Tree
+- [ ] TreeSelect
+- [ ] Carousel
+- [ ] DatePicker
+
+
 ## ✨ 特性
 
 - ✅ **TypeScript First** - 完整的类型支持
