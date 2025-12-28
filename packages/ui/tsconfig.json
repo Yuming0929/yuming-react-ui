@@ -8,7 +8,6 @@
     "emitDeclarationOnly": false,
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*", "vite-env.d.ts", "**/*.d.ts"],
+  "include": ["src/**/*", "vite-env.d.ts", "src/vitest.d.ts", "**/*.d.ts"],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
 }
-

@@ -23,18 +23,16 @@
   transition: $transition-base;
   outline: none;
 
+  &:focus-visible {
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+  }
+
   &:hover:not(:disabled) {
     border-color: $color-primary;
-    color: $color-primary;
-
   }
 
   &:active:not(:disabled) {
     transform: scale(0.98);
-  }
-
-  &:focus-visible {
-    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
   }
 
   // 尺寸变体
@@ -61,14 +59,13 @@
 
     &:hover:not(:disabled) {
       border-color: $color-primary;
-      color: $color-primary;
     }
   }
 
   &--primary {
     background-color: $color-primary;
     border-color: $color-primary;
-    color: #fff;
+    color: #ffffff;
 
     &:hover:not(:disabled) {
       background-color: color.scale($color-primary, $lightness: -10%);
@@ -79,7 +76,7 @@
   &--success {
     background-color: $color-success;
     border-color: $color-success;
-    color: #fff;
+    color: #ffffff;
 
     &:hover:not(:disabled) {
       background-color: color.scale($color-success, $lightness: -10%);
@@ -90,7 +87,7 @@
   &--warning {
     background-color: $color-warning;
     border-color: $color-warning;
-    color: #fff;
+    color: #ffffff;
 
     &:hover:not(:disabled) {
       background-color: color.scale($color-warning, $lightness: -10%);
@@ -101,7 +98,7 @@
   &--error {
     background-color: $color-error;
     border-color: $color-error;
-    color: #fff;
+    color: #ffffff;
 
     &:hover:not(:disabled) {
       background-color: color.scale($color-error, $lightness: -10%);
@@ -128,7 +125,7 @@
     width: 16px;
     height: 16px;
     display: inline-block;
-    animation: spin 1s linear infinite; 
+    animation: spin 1s linear infinite;
   }
 }
 
@@ -136,8 +133,8 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-

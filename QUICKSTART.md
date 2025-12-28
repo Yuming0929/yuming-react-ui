@@ -1,21 +1,3 @@
-
-# 待完成组件
-- [x] Button
-- [x] Input
-- [x] Toast
-- [ ] Modal
-- [ ] Accordion
-- [ ] Popover
-- [ ] Tooltip
-- [ ] Form
-- [ ] Slider
-- [ ] Tree
-- [ ] TreeSelect
-- [ ] Carousel
-- [ ] DatePicker
-
-
-
 # 快速开始指南
 
 ## 📋 前置要求
@@ -54,8 +36,6 @@ pnpm dev
 ```bash
 pnpm build
 ```
-
-
 
 构建产物将输出到 `packages/ui/dist` 目录。
 
@@ -114,6 +94,7 @@ packages/ui/src/input/
 ### 2. 组件模板
 
 **Input.tsx**
+
 ```tsx
 import React, { forwardRef } from 'react'
 import { InputProps } from './type'
@@ -123,14 +104,8 @@ import classNames from 'classnames'
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...restProps }, ref) => {
     const classes = classNames(styles.input, className)
-    
-    return (
-      <input
-        ref={ref}
-        className={classes}
-        {...restProps}
-      />
-    )
+
+    return <input ref={ref} className={classes} {...restProps} />
   }
 )
 
@@ -138,6 +113,7 @@ Input.displayName = 'Input'
 ```
 
 **type.ts**
+
 ```tsx
 import { InputHTMLAttributes } from 'react'
 
@@ -147,6 +123,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 ```
 
 **module.scss**
+
 ```scss
 @import '../style/token.scss';
 
@@ -156,6 +133,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 ```
 
 **index.ts**
+
 ```tsx
 export { Input } from './Input'
 export type { InputProps } from './type'
@@ -295,4 +273,3 @@ A: 运行 `pnpm type-check` 检查类型定义。
 ---
 
 Happy Coding! 🎉
-
