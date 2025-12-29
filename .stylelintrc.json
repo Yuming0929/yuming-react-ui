@@ -3,8 +3,8 @@
   "rules": {
     "selector-class-pattern": null,
     "scss/at-import-partial-extension": null,
-    "color-hex-length": "long"
+    "color-hex-length": "long",
+    "no-descending-specificity": null
   },
   "ignoreFiles": ["**/*.js", "**/*.ts", "**/*.tsx", "node_modules/**", "dist/**"]
 }
-

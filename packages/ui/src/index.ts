@@ -7,6 +7,8 @@ export { toast } from './toast'
 export type { ToastProps, ToastOptions } from './toast/type'
 export { Modal } from './modal'
 export type { ModalProps } from './modal/type'
-
+export { Accordion } from './accordion'
+export { AccordionItem } from './accordion/accordionItem'
+export type { AccordionProps, AccordionItemProps } from './accordion/type'
 // 样式导出
 export * from './style'

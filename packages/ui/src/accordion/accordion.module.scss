@@ -1,0 +1,97 @@
+.accordion {
+  // border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  min-width: 200px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgb(0 0 0 / 88%);
+  transition: all 0.3s;
+}
+
+.header:hover:not(:disabled) {
+  // background-color: #f0f0f0;
+  text-decoration: underline;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.icon {
+  color: rgb(0 0 0 / 90%);
+  transition: transform 0.3s;
+}
+
+// 核心动画区
+.contentWrapper {
+  display: grid;
+
+  // align-items: start;
+  // 默认状态：高度为 0
+  grid-template-rows: 0fr;
+  transition:
+    grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  background-color: #ffffff;
+}
+
+.item {
+  border-bottom: 1px solid #d9d9d9;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  // 展开状态下的样式
+  &--active {
+    .icon {
+      transform: rotate(180deg);
+    }
+
+    .contentWrapper {
+      grid-template-rows: 1fr; // 关键：展开时占比 1
+      opacity: 1;
+    }
+  }
+
+  &--disabled {
+    .header {
+      color: rgb(0 0 0 / 25%);
+      cursor: not-allowed;
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+.content {
+  overflow: hidden; // 必须有，否则内容会溢出
+  padding: 0 16px; // padding 放在内部，避免收起时 padding 导致的跳动
+
+  // 给实际内容加一点上下的间距，通过伪元素或者直接 margin
+  // 建议直接在子元素处理，或者这里加 padding-top/bottom
+  // 注意：如果在 wrapper 上加 padding，动画会失效或卡顿
+  // 最好的方式是 content 内部再包一层或者利用子元素 margin
+  & > div {
+    padding: 16px 0;
+  }
+}
+
+// 如果 AccordionItem 展开，给 content 增加内边距
+.item--active .content {
+  padding: 16px;
+  border-top: 1px solid #333333;
+}
