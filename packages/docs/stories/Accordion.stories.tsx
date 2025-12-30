@@ -19,7 +19,7 @@ export default meta
 
 export const Default: StoryObj<typeof Accordion> = {
   render: args => (
-    <div style={{ width: '200px', height: '800px' }}>
+    <div style={{ width: '400px', height: '800px' }}>
       <Accordion {...args} defaultActiveKey="1">
         <AccordionItem value="1" title="Panel 1">
           <p>Content for panel 1</p>

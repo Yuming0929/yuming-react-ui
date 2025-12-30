@@ -44,6 +44,13 @@ export const AccordionItem = ({
       >
         <span className={styles.title}>{title}</span>
         <ChevronDown className={styles.icon} size={12} />
+
+        <div
+          className={classNames(styles.bar, {
+            [styles['bar--active']]: isActive,
+            [styles['bar--disabled']]: !isActive
+          })}
+        />
       </button>
       {/* 内容区域 */}
       <div

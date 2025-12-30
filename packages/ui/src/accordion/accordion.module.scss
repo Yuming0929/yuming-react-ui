@@ -1,24 +1,46 @@
+@use '../style/token.scss' as *;
+
 .accordion {
   // border: 1px solid #d9d9d9;
-  border-radius: 4px;
+  border-radius: $border-radius-md;
   min-width: 200px;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: $color-bg;
 }
 
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 12px 16px;
-  background-color: #ffffff;
+  background-color: $color-neutral-50;
   border: none;
   outline: none;
   cursor: pointer;
   font-size: 14px;
-  color: rgb(0 0 0 / 88%);
-  transition: all 0.3s;
+  color: $color-text-primary;
+
+  .bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: $color-neutral-500;
+
+    &--active {
+      width: 100%;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &--disabled {
+      width: 0%;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
 }
 
 .header:hover:not(:disabled) {
@@ -46,11 +68,11 @@
     grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
-  background-color: #ffffff;
+  background-color: $color-bg;
 }
 
 .item {
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid $color-border;
 
   &:last-child {
     border-bottom: none;
@@ -72,7 +94,7 @@
     .header {
       color: rgb(0 0 0 / 25%);
       cursor: not-allowed;
-      background-color: #f5f5f5;
+      background-color: $color-bg-hover;
     }
   }
 }
@@ -91,7 +113,7 @@
 }
 
 // 如果 AccordionItem 展开，给 content 增加内边距
-.item--active .content {
-  padding: 16px;
-  border-top: 1px solid #333333;
-}
+// .item--active .content {
+//     //   padding: 16px;
+//     //   border-top: 1px solid #333333;
+// }

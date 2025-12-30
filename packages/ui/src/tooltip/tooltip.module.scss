@@ -1,0 +1,139 @@
+@use '../style/token.scss' as *;
+
+.tooltip {
+  position: fixed;
+  z-index: 1000;
+  max-width: 250px;
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-sm;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: rgb(0 0 0 / 85%);
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-lg;
+  pointer-events: none;
+  opacity: 0;
+  animation: tooltipFadeIn 0.2s ease-out forwards;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltipContent {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+}
+
+// 箭头位置
+.arrow--top {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: rgb(0 0 0 / 85%);
+  border-bottom: none;
+}
+
+.arrow--bottom {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: rgb(0 0 0 / 85%);
+  border-top: none;
+}
+
+.arrow--left {
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left-color: rgb(0 0 0 / 85%);
+  border-right: none;
+}
+
+.arrow--right {
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-color: rgb(0 0 0 / 85%);
+  border-left: none;
+}
+
+// 不同位置的动画
+.tooltip--top {
+  animation: tooltipFadeInTop 0.2s ease-out forwards;
+}
+
+.tooltip--bottom {
+  animation: tooltipFadeInBottom 0.2s ease-out forwards;
+}
+
+.tooltip--left {
+  animation: tooltipFadeInLeft 0.2s ease-out forwards;
+}
+
+.tooltip--right {
+  animation: tooltipFadeInRight 0.2s ease-out forwards;
+}
+
+@keyframes tooltipFadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tooltipFadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tooltipFadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tooltipFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
