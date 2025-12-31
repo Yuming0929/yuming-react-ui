@@ -18,7 +18,7 @@ export default meta
 
 export const Basic: StoryObj = {
   render: () => (
-    <Popover title="这是一条提示信息" content="这是一条提示信息" placement="top" showClose={true}>
+    <Popover title="信息" content="这是一条提示信息" placement="top" showClose={true}>
       <Button>显示提示</Button>
     </Popover>
   )

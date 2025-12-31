@@ -225,7 +225,9 @@ export const Popover = ({
 
   return (
     <>
-      {cloneElement(childElement, triggerProps)}
+      {
+        cloneElement(childElement, triggerProps) // 克隆触发元素并添加事件监听
+      }
       {visible && (
         <div
           ref={popoverRef}

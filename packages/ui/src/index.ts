@@ -14,5 +14,7 @@ export { Tooltip } from './tooltip'
 export type { TooltipProps, TooltipPlacement, TooltipTrigger } from './tooltip/type'
 export { Popover } from './popover'
 export type { PopoverProps, PopoverPlacement, PopoverTrigger } from './popover/type'
+export { Select } from './select'
+export type { SelectProps, SelectOption, SelectSize, SelectStatus } from './select/type'
 // 样式导出
 export * from './style'
