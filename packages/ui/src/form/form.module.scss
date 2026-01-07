@@ -1,0 +1,148 @@
+@use '../style/token.scss' as *;
+
+.form {
+  width: 100%;
+}
+
+// 布局
+.form--vertical {
+  .form-item {
+    flex-direction: column;
+  }
+
+  .form-item-label {
+    margin-bottom: $spacing-xs;
+    padding: 0;
+    text-align: left;
+  }
+
+  .form-item-control {
+    flex: 1;
+  }
+}
+
+.form--horizontal {
+  .form-item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .form-item-label {
+    margin-right: $spacing-md;
+    padding: $spacing-xs 0;
+    flex-shrink: 0;
+  }
+
+  .form-item-control {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.form--inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md $spacing-lg;
+
+  .form-item {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .form-item-label {
+    margin-right: $spacing-sm;
+    margin-bottom: 0;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .form-item-control {
+    flex: 0 1 auto;
+  }
+}
+
+// 尺寸
+.form--small {
+  font-size: $font-size-xs;
+}
+
+.form--medium {
+  font-size: $font-size-sm;
+}
+
+.form--large {
+  font-size: $font-size-md;
+}
+
+// 表单项
+.formItem {
+  display: flex;
+  margin-bottom: $spacing-lg;
+}
+
+.form-item--no-style {
+  margin-bottom: 0;
+}
+
+// 标签
+.formItemLabel {
+  display: flex;
+  align-items: center;
+  font-size: inherit;
+  color: $color-text-primary;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.form-item-label--left {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.form-item-label--right {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.formItemRequired {
+  margin-right: 4px;
+  color: $color-error;
+  font-family: SimSun, sans-serif;
+}
+
+// 控制区域
+.formItemControl {
+  flex: 1;
+  min-width: 0;
+}
+
+.formItemControlInput {
+  position: relative;
+}
+
+// 帮助文本和错误信息
+.formItemHelp,
+.formItemError {
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  line-height: 1.5;
+}
+
+.formItemHelp {
+  color: $color-text-secondary;
+}
+
+.formItemError {
+  color: $color-error;
+}
+
+// 错误状态会通过子组件的 status prop 处理
+
+// 额外内容
+.formItemExtra {
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  line-height: 1.5;
+}
