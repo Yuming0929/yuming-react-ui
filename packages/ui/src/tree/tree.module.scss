@@ -1,0 +1,113 @@
+.tree {
+  font-size: 14px;
+  color: rgb(0 0 0 / 88%);
+  user-select: none; // 防止双击展开时选中文字
+}
+
+.nodeWrapper {
+  // 每一行节点的容器
+  position: relative;
+}
+
+.nodeContent {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &--selected {
+    background-color: #e6f7ff; // 选中高亮色
+    color: #1890ff;
+
+    &:hover {
+      background-color: #bae7ff;
+    }
+  }
+
+  &--disabled {
+    color: #00000040;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+// 展开/收起的三角箭头
+.switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #00000073;
+  transition: transform 0.3s;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: rgb(0 0 0 / 5%);
+  }
+
+  &--expanded {
+    transform: rotate(90deg);
+  }
+
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.loadingIcon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.iconWrapper {
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// --- 动画区域 (同 Accordion) ---
+.childrenWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.2s ease-out,
+    opacity 0.2s ease-out;
+
+  &--expanded {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+.childrenInner {
+  overflow: hidden;
+}

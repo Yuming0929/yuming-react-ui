@@ -16,5 +16,19 @@ export { Popover } from './popover'
 export type { PopoverProps, PopoverPlacement, PopoverTrigger } from './popover/type'
 export { Select } from './select'
 export type { SelectProps, SelectOption, SelectSize, SelectStatus } from './select/type'
+export { Form } from './form'
+export { FormItem } from './form/formItem'
+export type {
+  FormProps,
+  FormItemProps,
+  Rule,
+  FieldData,
+  FormSize,
+  FormLayout,
+  FormInstance
+} from './form/type'
+export { Tree } from './tree'
+export { TreeNode } from './tree/treeNode'
+export type { TreeProps, TreeNodeType, Key } from './tree/type'
 // 样式导出
 export * from './style'

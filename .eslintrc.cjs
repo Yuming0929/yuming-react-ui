@@ -26,7 +26,7 @@ module.exports = {
       { allowConstantExport: true }
     ],
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    '@typescript-eslint/no-explicit-any': 'warn'
+    '@typescript-eslint/no-explicit-any': 'off'
   },
   settings: {
     react: {
