@@ -30,5 +30,7 @@ export type {
 export { Tree } from './tree'
 export { TreeNode } from './tree/treeNode'
 export type { TreeProps, TreeNodeType, Key } from './tree/type'
+export { Slider } from './slider'
+export type { SliderProps } from './slider/type'
 // 样式导出
 export * from './style'
